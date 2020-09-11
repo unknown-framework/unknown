@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
 
     <name>unknown</name>
-    <description>Unknow is a Java framework based on Spring-Boot.</description>
+    <description>Unknown is a Java framework based on Spring-Boot.</description>
 
     <licenses>
         <license>
@@ -43,7 +43,9 @@
     </properties>
 
     <modules>
-        <module>unknown-generator</module>
+        <module>unknown-module-generator</module>
+        <module>unknown-core</module>
+        <module>unknown-parent</module>
     </modules>
 
     <profiles>
