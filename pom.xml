@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -8,7 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>unknown</name>
+    <name>Unknown Framework</name>
     <description>Unknown is a Java framework based on Spring-Boot.</description>
 
     <licenses>
@@ -43,9 +42,9 @@
     </properties>
 
     <modules>
-        <module>unknown-module-generator</module>
-        <module>unknown-core</module>
         <module>unknown-parent</module>
+        <module>unknown-core</module>
+        <module>unknown-tools</module>
     </modules>
 
     <profiles>
@@ -116,4 +115,17 @@
             </build>
         </profile>
     </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>se.bjurr.gitchangelog</groupId>
+                <artifactId>git-changelog-maven-plugin</artifactId>
+                <version>1.62</version>
+                <configuration>
+                    <file>CHANGELOG.md</file>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

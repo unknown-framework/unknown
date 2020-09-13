@@ -10,12 +10,13 @@
         <relativePath>../unknown-parent</relativePath>
     </parent>
 
-    <artifactId>unknown-core</artifactId>
+    <groupId>com.unknown.unknown-tools</groupId>
+    <artifactId>unknown-tools</artifactId>
     <packaging>pom</packaging>
 
-    <name>Unknown Core</name>
+    <name>Unknown Tools</name>
 
     <modules>
-        <module>unknown-core-common</module>
+        <module>unknown-module-generator</module>
     </modules>
 </project>
