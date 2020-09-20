@@ -9,7 +9,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -157,7 +156,7 @@ public abstract class AbstractEntity implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         final AbstractEntity that = (AbstractEntity) o;
-        return Objects.equals(id, that.id);
+        return this.id != null && that.id != null && this.id.equals(that.id);
     }
 
     /**
