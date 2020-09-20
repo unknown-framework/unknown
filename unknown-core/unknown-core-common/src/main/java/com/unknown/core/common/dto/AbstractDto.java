@@ -147,7 +147,7 @@ public abstract class AbstractDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         final AbstractDto that = (AbstractDto) o;
-        return Objects.equals(id, that.id);
+        return id != null && that.id != null && id.equals(that.id);
     }
 
     /**
