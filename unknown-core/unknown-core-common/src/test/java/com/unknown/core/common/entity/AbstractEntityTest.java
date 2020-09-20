@@ -22,8 +22,8 @@ public class AbstractEntityTest {
     private static final String CREATION_USER = "Creation User";
     private static final String MODIFICATION_USER = "Modification User";
 
-    private static final String ANOTHER_CREATION_USER = "Creation User";
-    private static final String ANOTHER_MODIFICATION_USER = "Modification User";
+    private static final String ANOTHER_CREATION_USER = "Another Creation User";
+    private static final String ANOTHER_MODIFICATION_USER = "Another Modification User";
 
     @Test
     public void shouldEnsureIdBeSetIfNotAlreadySet() {
