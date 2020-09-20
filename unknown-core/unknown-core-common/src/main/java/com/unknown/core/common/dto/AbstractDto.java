@@ -7,8 +7,8 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * <p>Abstract DTO class for representing a domain entity.</p>
- * <p>This class contains only basic technical information and should be extending for your domain entity.</p>
+ * <p>Abstract base class for all dto.</p>
+ * <p>This class contains only basic technical fields and should be extending for your domain entity.</p>
  *
  * @author t.postaire
  */
@@ -46,16 +46,16 @@ public abstract class AbstractDto {
     }
 
     /**
-     * Gets entity id.
+     * Gets dto id.
      *
-     * @return value of the entity id.
+     * @return value of the dto id.
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * Sets entity id.
+     * Sets dto id.
      *
      * @param id id to set.
      */
@@ -64,16 +64,16 @@ public abstract class AbstractDto {
     }
 
     /**
-     * Gets entity creation date.
+     * Gets dto creation date.
      *
-     * @return value of the entity creation date.
+     * @return value of the dto creation date.
      */
     public Date getCreationDate() {
         return creationDate;
     }
 
     /**
-     * Sets entity creation date.
+     * Sets dto creation date.
      *
      * @param creationDate creation date to set.
      */
@@ -82,16 +82,16 @@ public abstract class AbstractDto {
     }
 
     /**
-     * Gets entity creation user.
+     * Gets dto creation user.
      *
-     * @return value of the entity creation user.
+     * @return value of the dto creation user.
      */
     public String getCreationUser() {
         return creationUser;
     }
 
     /**
-     * Sets entity creation user.
+     * Sets dto creation user.
      *
      * @param creationUser creation user to set.
      */
@@ -100,16 +100,16 @@ public abstract class AbstractDto {
     }
 
     /**
-     * Gets entity modification date.
+     * Gets dto modification date.
      *
-     * @return value of the entity modification date.
+     * @return value of the dto modification date.
      */
     public Date getModificationDate() {
         return modificationDate;
     }
 
     /**
-     * Sets entity modification date.
+     * Sets dto modification date.
      *
      * @param modificationDate modification date to set.
      */
@@ -118,16 +118,16 @@ public abstract class AbstractDto {
     }
 
     /**
-     * Gets entity modification user.
+     * Gets dto modification user.
      *
-     * @return value of the entity modification user.
+     * @return value of the dto modification user.
      */
     public String getModificationUser() {
         return modificationUser;
     }
 
     /**
-     * Sets entity modification user.
+     * Sets dto modification user.
      *
      * @param modificationUser modification user to set.
      */
@@ -137,7 +137,7 @@ public abstract class AbstractDto {
 
     /**
      * <p>Indicates whether some object is equal to this one.</p>
-     * <p>Note that two entities are equals if at least their ids are the same.</p>
+     * <p>Note that two entities are equals if their ids are equals, not regarding other fields</p>
      *
      * @param o the reference object with which to compare.
      * @return <code>true</code> if this object is the same as the o argument, <code>false</code> otherwise.
