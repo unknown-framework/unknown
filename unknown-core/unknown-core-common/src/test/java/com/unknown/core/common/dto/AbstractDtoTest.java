@@ -18,20 +18,20 @@ import static org.junit.Assert.*;
 @RunWith(MockitoJUnitRunner.class)
 public class AbstractDtoTest {
 
-    private String creationUser = "Creation User";
-    private String modificationUser = "Modification User";
+    private static final String CREATION_USER = "Creation User";
+    private static final String MODIFICATION_USER = "Modification User";
 
-    private String anotherCreationUser = "Creation User";
-    private String anotherModificationUser = "Modification User";
+    private static final String ANOTHER_CREATION_USER = "Creation User";
+    private static final String ANOTHER_MODIFICATION_USER = "Modification User";
 
     @Test
     public void shouldCopyAndBeImmutable() {
         AbstractDto toCopy = new TestDto();
         toCopy.setId(1L);
         toCopy.setCreationDate(from(Instant.now()));
-        toCopy.setCreationUser(this.creationUser);
+        toCopy.setCreationUser(CREATION_USER);
         toCopy.setModificationDate(from(Instant.now()));
-        toCopy.setModificationUser(this.modificationUser);
+        toCopy.setModificationUser(MODIFICATION_USER);
 
         AbstractDto testDto = new TestDto(toCopy);
 
@@ -46,9 +46,9 @@ public class AbstractDtoTest {
 
         toCopy.setId(2L);
         toCopy.setCreationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        toCopy.setCreationUser(this.anotherCreationUser);
+        toCopy.setCreationUser(ANOTHER_CREATION_USER);
         toCopy.setModificationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        toCopy.setModificationUser(this.anotherModificationUser);
+        toCopy.setModificationUser(ANOTHER_MODIFICATION_USER);
 
         assertNotEquals("Id must be independent for the copy", toCopy.getId(), testDto.getId());
         assertNotEquals("Creation date must be independent for the copy", toCopy.getCreationDate(), testDto.getCreationDate());
@@ -88,15 +88,15 @@ public class AbstractDtoTest {
         AbstractDto a1 = new TestDto();
         a1.setId(id);
         a1.setCreationDate(from(Instant.now()));
-        a1.setCreationUser(this.creationUser);
+        a1.setCreationUser(CREATION_USER);
         a1.setModificationDate(from(Instant.now()));
-        a1.setModificationUser(this.modificationUser);
+        a1.setModificationUser(MODIFICATION_USER);
         AbstractDto a2 = new TestDto();
         a2.setId(id);
         a2.setCreationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setCreationUser(this.anotherCreationUser);
+        a2.setCreationUser(ANOTHER_CREATION_USER);
         a2.setModificationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setModificationUser(this.anotherModificationUser);
+        a2.setModificationUser(ANOTHER_MODIFICATION_USER);
 
         assertEquals(a1.hashCode(), a2.hashCode());
         assertEquals(a1, a2);
@@ -123,14 +123,14 @@ public class AbstractDtoTest {
     public void shouldNotBeEqualsIfIdAreNull() {
         AbstractDto a1 = new TestDto();
         a1.setCreationDate(from(Instant.now()));
-        a1.setCreationUser(this.creationUser);
+        a1.setCreationUser(CREATION_USER);
         a1.setModificationDate(from(Instant.now()));
-        a1.setModificationUser(this.modificationUser);
+        a1.setModificationUser(MODIFICATION_USER);
         AbstractDto a2 = new TestDto();
         a2.setCreationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setCreationUser(this.anotherCreationUser);
+        a2.setCreationUser(ANOTHER_CREATION_USER);
         a2.setModificationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setModificationUser(this.anotherModificationUser);
+        a2.setModificationUser(ANOTHER_MODIFICATION_USER);
 
         assertEquals(a1.hashCode(), a2.hashCode());
         assertNotEquals(a1, a2);
@@ -168,10 +168,7 @@ public class AbstractDtoTest {
 
     public static class AnotherTestDto extends AbstractDto {
         public AnotherTestDto() {
-        }
-
-        public AnotherTestDto(final AbstractDto toCopy) {
-            super(toCopy);
+            // Constructor
         }
     }
 }

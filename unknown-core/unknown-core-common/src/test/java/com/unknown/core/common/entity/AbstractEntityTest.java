@@ -19,6 +19,12 @@ import static org.mockito.Mockito.spy;
 @RunWith(MockitoJUnitRunner.class)
 public class AbstractEntityTest {
 
+    private static final String CREATION_USER = "Creation User";
+    private static final String MODIFICATION_USER = "Modification User";
+
+    private static final String ANOTHER_CREATION_USER = "Creation User";
+    private static final String ANOTHER_MODIFICATION_USER = "Modification User";
+
     @Test
     public void shouldEnsureIdBeSetIfNotAlreadySet() {
         AbstractEntity abstractEntity = spy(new TestEntity());
@@ -57,15 +63,15 @@ public class AbstractEntityTest {
         AbstractEntity a1 = new TestEntity();
         a1.setId(id);
         a1.setCreationDate(from(Instant.now()));
-        a1.setCreationUser("Creation User");
+        a1.setCreationUser(CREATION_USER);
         a1.setModificationDate(from(Instant.now()));
-        a1.setModificationUser("Modification User");
+        a1.setModificationUser(MODIFICATION_USER);
         AbstractEntity a2 = new TestEntity();
         a2.setId(id);
         a2.setCreationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setCreationUser("Another Creation User");
+        a2.setCreationUser(ANOTHER_CREATION_USER);
         a2.setModificationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setModificationUser("Another Modification User");
+        a2.setModificationUser(ANOTHER_MODIFICATION_USER);
 
         assertEquals(a1.hashCode(), a2.hashCode());
         assertEquals(a1, a2);
@@ -92,14 +98,14 @@ public class AbstractEntityTest {
     public void shouldNotBeEqualsIfIdAreNull() {
         AbstractEntity a1 = new TestEntity();
         a1.setCreationDate(from(Instant.now()));
-        a1.setCreationUser("Creation User");
+        a1.setCreationUser(CREATION_USER);
         a1.setModificationDate(from(Instant.now()));
-        a1.setModificationUser("Modification User");
+        a1.setModificationUser(MODIFICATION_USER);
         AbstractEntity a2 = new TestEntity();
         a2.setCreationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setCreationUser("Another Creation User");
+        a2.setCreationUser(ANOTHER_CREATION_USER);
         a2.setModificationDate(from(Instant.now().plus(10, ChronoUnit.SECONDS)));
-        a2.setModificationUser("Another Modification User");
+        a2.setModificationUser(ANOTHER_MODIFICATION_USER);
 
         assertEquals(a1.hashCode(), a2.hashCode());
         assertNotEquals(a1, a2);
