@@ -43,6 +43,7 @@
 
     <modules>
         <module>unknown-parent</module>
+        <module>unknown-autoconfigure</module>
         <module>unknown-core</module>
         <module>unknown-tools</module>
     </modules>
